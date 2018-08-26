@@ -4,9 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp_1"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl HorizontalAlignment="Left" Height="409" Margin="10,0,0,0" VerticalAlignment="Top" Width="772">
+            <TabItem Header="Calendar">
+                <Grid Background="#FFE5E5E5">
+                    <Calendar Name="MyCalendar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="AliceBlue" DisplayMode="Month" DisplayDateStart="8/6/2018" DisplayDateEnd="8/31/2018" IsTodayHighlighted="True" FirstDayOfWeek="Monday" SelectedDatesChanged="MyCalendar_SelectedDatesChanged">
+                        <Calendar.BlackoutDates>
+                            <CalendarDateRange Start="8/8/2018" End="8/12/2018"/>
+                        </Calendar.BlackoutDates>
+                        <Calendar.SelectedDates>
+                            <sys:DateTime>8/20/2018</sys:DateTime>
+                        </Calendar.SelectedDates>
+                    </Calendar>
+                    <TextBox Name="tbDateSelected" HorizontalAlignment="Left" Height="23" Margin="241,17,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Draw">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

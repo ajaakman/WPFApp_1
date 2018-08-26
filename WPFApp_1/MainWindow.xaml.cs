@@ -24,5 +24,22 @@ namespace WPFApp_1
         {
             InitializeComponent();
         }
+
+        private void MyCalendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var calendar = sender as Calendar;
+            if(calendar.SelectedDate.HasValue)
+            {
+                DateTime date = calendar.SelectedDate.Value;
+                try
+                {
+                    tbDateSelected.Text = date.ToShortDateString();
+                }
+                catch(NullReferenceException)
+                {
+                }
+            }
+
+        }
     }
 }
